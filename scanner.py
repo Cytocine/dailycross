@@ -7,7 +7,7 @@ from datetime import datetime
 
 # --- CONFIGURATION ---
 # Get Webhook URL from GitHub Secrets (Environment Variable)
-DISCORD_WEBHOOK_URL = os.environ.get("https://discord.com/api/webhooks/1447796936244723834/MUUN2Mk86StPaA38FTicu5pvOAuyJhjWUgxaQ0Ojo9De7DPUpBmb5alpK8UU8tLY9j9_")
+DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
 # Tickers List (You can also load this from a file if you commit the file)
 tickers = [
@@ -134,4 +134,5 @@ for ticker in tickers:
             #    send_discord_alert(ticker, round(curr['Close'], 2), round(curr['ADX'], 1), "WATCH (Near Zone)")
 
     except Exception as e:
+
         print(f"Error {ticker}: {e}")
