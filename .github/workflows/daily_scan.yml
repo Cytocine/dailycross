@@ -1,0 +1,31 @@
+name: Daily Stock Scanner
+
+on:
+  schedule:
+    # Runs at 21:00 UTC (which is 4:00 PM EST / Market Close)
+    # Mon-Fri only
+    - cron: '0 21 * * 1-5'
+  workflow_dispatch: # Allows you to run it manually button click
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Scanner
+        env:
+          # This pulls the secret from your GitHub Settings
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: python scanner.py
