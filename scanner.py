@@ -11,57 +11,12 @@ DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
 # Tickers List (You can also load this from a file if you commit the file)
 tickers = [
-"A", "AA", "AAPL", "AAVL", "AAP", "ABBV", "ABNB", "ACAD", "ACGL", "ACHC", "ACN",
-"ADC", "ADBE", "ADMA", "ADSK", "AEO", "AER", "AEVA", "AFL", "AG", "AGCO", "AGI",
-"AGNC", "AIG", "AKAM", "ALB", "ALGN", "ALK", "ALL", "ALNY", "AMAT", "AMAZ", 
-"AMCR", "AMD", "AME", "AMGN", "AMKR", "AMT", "AMZN", "ANET", "ANF", "APD", 
-"APH", "APO", "APP", "APTV", "AR", "AROC", "ARWR", "ASML", "ATEC", "ATVI", 
-"AUTO", "AVB", "AVGO", "AVY", "AXP", "AXTI", "BALL", "BA", "BBWI", "BDX", 
-"BEN", "BE", "BHP", "BIDU", "BIG", "BILI", "BIO", "BLDR", "BMRN", "BN", "BNS",
-"BRO", "BSX", "BTI", "BURL", "BWIN", "BX", "C", "CABA", "CAG", "CAL", "CAVA", 
-"CAT", "CBRE", "CCI", "CC", "CCJ", "CCK", "CDAY", "CDE", "CDNS", "CDW", "CELH", 
-"CENC", "CENX", "CF", "CFG", "CFLT", "CI", "CIEN", "CINF", "CLF", "CLX", 
-"CM", "CMA", "CMCSA", "CME", "CMG", "CNC", "CNP", "CNQ", "CNX", "COF", "COHR", 
-"COO", "COP", "COST", "COUR", "CP", "CPRT", "CRH", "CRL", "CRMD", "CRM", 
-"CRWD", "CSCO", "CSX", "CTAS", "CTSH", "CTVA", "CVLT", "CVNA", "CVS", "CZR", 
-"DAN", "DAR", "DD", "DE", "DECK", "DELL", "DEO", "DHI", "DHR", "DK", "DKS", 
-"DLR", "DLTR", "DOCU", "DXCM", "EA", "EAT", "EBAY", "EC", "ECL", "ED", "EL", 
-"ELF", "ELV", "EMB", "EMN", "EMR", "ENPH", "EOG", "EOS", "EPAM", "EQIX", 
-"EQT", "ES", "ESI", "ETN", "ETR", "ETSY", "EVRG", "EXAS", "EXC", "EXPE", 
-"EXR", "F", "FANG", "FERG", "FFIV", "FIS", "FISV", "FITB", "FLEX", "FLS", 
-"FMC", "FNF", "FOXA", "FSLR", "FTI", "FTNT", "FWONK", "G", "GDDY", "GD", 
-"GEHC", "GEOG", "GEO", "GGAL", "GFL", "GFS", "GILD", "GIS", "GLW", "GM", 
-"GME", "GOOGL", "GOOG", "GPK", "GPN", "GRMN", "GS", "GSK", "GTLB", "GWW", 
-"HAS", "HBAN", "HCA", "HD", "HDB", "HIG", "HII", "HPE", "HPQ", "HRC", "HSIC", 
-"HSY", "HUBB", "HUM", "HUN", "HXL", "IAC", "IBM", "ICE", "ILMN", "INCY", 
-"INDV", "INFN", "INTC", "INTU", "INVZ", "INSM", "IP", "IPG", "IR", "IRM", 
-"ISRG", "ITT", "IVZ", "J", "JAZZ", "JBHT", "JNJ", "JPM", "JWN", "K", "KDP", 
-"KEY", "KKR", "KLAC", "KMB", "KMI", "KMX", "KO", "KR", "KURA", "L", "LAZ", 
-"LHX", "LMT", "LNC", "LEN", "LITE", "LIVN", "LKQ", "LLY", "LMT", "LNG", 
-"LOW", "LRCX", "LULU", "LUV", "LYV", "M", "MA", "MAR", "MAS", "MCD", "MCK", 
-"MCO", "MDB", "MDLZ", "MDT", "META", "MET", "METC", "MFC", "MGM", "MKC", 
-"MOS", "MPC", "MRO", "MRK", "MRNA", "MRVL", "MS", "MSFT", "MSI", "MSTR", 
-"MT", "MTCH", "MTD", "MTG", "MU", "NDAQ", "NB", "NCLH", "NEM", "NET", "NFLX", 
-"NI", "NKE", "NOC", "NOG", "NOW", "NUE", "NVDA", "NVO", "NTAP", "NTLA", 
-"NTRA", "NUE", "NVAX", "NWS", "NWSA", "NXPI", "OCUL", "ODFL", "OKE", "OMC", 
-"ON", "ORCL", "ORI", "ORLY", "OTIS", "OVV", "OXY", "PANW", "PARA", "PAYC", 
-"PENN", "PEP", "PFE", "PG", "PGR", "PH", "PHM", "PLNT", "PLTR", "PM", "PNC", 
-"PNR", "PODD", "POOL", "PPG", "PPL", "PRMB", "PRU", "PSA", "PSX", "PSTG", 
-"PTC", "PVH", "PYPL", "QCOM", "QDEL", "QURE", "RBLX", "RCL", "RDFN", "REGN", 
-"RGTI", "RH", "RIVN", "RJF", "RL", "RMD", "RNG", "ROL", "ROKU", "ROP", 
-"RRC", "RSG", "RTX", "RVLV", "RVTY", "SAGE", "SBAC", "SBLK", "SBUX", "SCHW",
-"SE", "SEDG", "SGEN", "SGML", "SGRY", "SHOP", "SHW", "SIG", "SIRI", "SJM", 
-"SKX", "SLB", "SLG", "SLGN", "SLM", "SMCI", "SNA", "SNAP", "SNDK", "SNP", 
-"SFM", "SPG", "SPGI", "SPOT", "SPT", "SQM", "SSNC", "SSRM", "STAA", "STLD", 
-"STNG", "STT", "STX", "SW", "SWK", "SYF", "SYK", "SYY", "T", "TAP", "TD", 
-"TDC", "TDG", "TEAM", "TECK", "TEL", "TER", "TGT", "TICK", "TJX", "TMO", 
-"TMUS", "TOL", "TPR", "TREX", "TRGP", "TRV", "TSCO", "TSLA", "TSN", "TT", 
-"TTD", "TTMI", "TTWO", "UAL", "UBER", "UDR", "UHS", "ULTA", "UNH", "UNFI", 
-"UNP", "UPS", "URI", "URBN", "USB", "V", "VEEV", "VFC", "VIPS", "VLO", 
-"VMC", "VNET", "VNOM", "VRSN", "VRT", "VRSK", "VST", "VTR", "VZ", "WAB", 
-"WBA", "WBD", "WDAY", "WELL", "WFC", "WGO", "WMB", "WMT", "WM", "WOOF", 
-"WPM", "WRB", "WST", "WTW", "WYNN", "XOM", "XPO", "XYL", "YUM", "ZBH", "ZBRA",
-"ZION", "ZM", "ZS", "ZTS"
+"PLNT", "HP", "AER", "CRM", "XYL", "PRMB", "GD", "CF", "MRVL", "ROL",
+"ESI", "NTAP", "AAP", "MAR", "OCUL", "RVTY", "VIPS", "AMT", "FITB", "HPQ",
+"ETSY", "SPT", "CHTR", "JHX", "NTRA", "BILL", "STX", "AMD", "VRT", "CBRE",
+"AVGO", "RIOT", "CMG", "FANG", "XYZ", "GEO", "BALL", "JBHT", "BRO", "ZS",
+"INCY", "COO", "NVDA", "ELV", "CPRT", "CI", "PEGA", "CZR", "MOD", "RCL",
+"ACHC", "PPC", "ORLY", "SW", "AXTI"
 
 ]
 adx_threshold = 25
@@ -136,3 +91,4 @@ for ticker in tickers:
     except Exception as e:
 
         print(f"Error {ticker}: {e}")
+
