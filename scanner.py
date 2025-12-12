@@ -16,7 +16,12 @@ tickers = [
 "ETSY", "SPT", "CHTR", "JHX", "NTRA", "BILL", "STX", "AMD", "VRT", "CBRE",
 "AVGO", "RIOT", "CMG", "FANG", "XYZ", "GEO", "BALL", "JBHT", "BRO", "ZS",
 "INCY", "COO", "NVDA", "ELV", "CPRT", "CI", "PEGA", "CZR", "MOD", "RCL",
-"ACHC", "PPC", "ORLY", "SW", "AXTI"
+"ACHC", "PPC", "ORLY", "SW", "AXTI","KO", "PCG", "QQQ", "AMD", "SMCI", "DELL", "OWL", "PG", "WDC", "CCL",
+"BABA", "GILD", "BAC", "CLSK", "HPQ", "MARA", "META", "QS", "RIOT", "MRVL",
+"TIGR", "LVS", "PINS", "COTY", "RKT", "CMG", "CORZ", "LYFT", "NVDA", "ABBV",
+"ONDS", "OPEN", "CRM", "EXE", "KSS", "ALHC", "DJT", "CLOV", "AXON", "SNAP",
+"SPY", "ARM", "HIMS", "UPST", "DKNG"
+
 
 ]
 adx_threshold = 25
@@ -91,4 +96,5 @@ for ticker in tickers:
     except Exception as e:
 
         print(f"Error {ticker}: {e}")
+
 
