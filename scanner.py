@@ -87,7 +87,14 @@ for ticker in tickers:
             
             if curr['Low'] <= curr['EMA_20']:
                 print(f"ALERT: {ticker} BUY SIGNAL")
-                send_discord_alert(ticker, round(curr['Close'], 2), round(curr['ADX'], 1), ">>> BUY SIGNAL <<<")
+               send_discord_alert(
+    ticker,
+    round(curr['Close'], 2),
+    round(curr['ADX'], 1),
+    ">>> BUY SIGNAL <<<",
+    custom_text="Pullback to EMA20 in strong ADX trend. Watch for continuation."
+)
+
             
             # Optional: Uncomment if you want Watch alerts too
             # elif dist_to_ema <= 3:
@@ -96,5 +103,6 @@ for ticker in tickers:
     except Exception as e:
 
         print(f"Error {ticker}: {e}")
+
 
 
